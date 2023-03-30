@@ -46,7 +46,7 @@ out = depth(replace_ranges(src, grain, fl_ranges), 10)
 
 
 out.set_output()
-src.set_output(1)
+#src.set_output(1)
 #denoise_final.set_output(2)
 #aa.set_output(3)
 #deband.set_output(4)
