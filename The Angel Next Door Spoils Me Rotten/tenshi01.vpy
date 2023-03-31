@@ -7,7 +7,7 @@ from vsaa import antialiasers, transpose_aa
 core = vs.core
 
 
-fl_ranges = [(0, 17861), (17982, 31768), (33926, 34045)]
+fl_ranges = [(0, 1942), (2062, 17861), (17982, 31768), (33926, 34045)]
 
 
 src = depth(core.lsmas.LWLibavSource(r'C:\Users\Hammad Ansari\Desktop\[SubsPlease] Otonari no Tenshi-sama ni Itsunomanika Dame Ningen ni Sareteita Ken - 01 (1080p) [9330289F].mkv'), 16)
