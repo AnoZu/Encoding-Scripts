@@ -28,13 +28,13 @@ toolbars: !!python/object:vspreview.toolbars.Toolbars
             '0': !!python/object:vspreview.core.types.video.VideoOutput
                 crop_values: !!python/object:vspreview.core.types.misc.CroppingInfo
                     active: false
-                    height: 1036
+                    height: 1080
                     is_absolute: false
                     left: 0
                     top: 0
-                    width: 1912
+                    width: 1920
                 last_showed_frame: !!python/object:vspreview.core.types.units.Frame
-                    value: 28598
+                    value: 5810
                 play_fps: !!python/object/apply:fractions.Fraction
                 - 24000
                 - 1001

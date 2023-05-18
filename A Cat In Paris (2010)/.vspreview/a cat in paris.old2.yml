@@ -22,8 +22,8 @@ toolbars: !!python/object:vspreview.toolbars.Toolbars
     debug:
         settings: *id003
     main:
-        current_output_index: 7
-        current_zoom_index: 2
+        current_output_index: 1
+        current_zoom_index: 10
         outputs: !!python/object:vspreview.models.outputs.VideoOutputs
             '1': !!python/object:vspreview.core.types.video.VideoOutput
                 crop_values: !!python/object:vspreview.core.types.misc.CroppingInfo
@@ -34,109 +34,25 @@ toolbars: !!python/object:vspreview.toolbars.Toolbars
                     top: 0
                     width: 1920
                 last_showed_frame: !!python/object:vspreview.core.types.units.Frame
-                    value: 51247
+                    value: 24658
                 play_fps: !!python/object/apply:fractions.Fraction
                 - 24000
                 - 1001
                 title: Video Node 1
-            '2': !!python/object:vspreview.core.types.video.VideoOutput
-                crop_values: !!python/object:vspreview.core.types.misc.CroppingInfo
-                    active: false
-                    height: 1036
-                    is_absolute: false
-                    left: 0
-                    top: 0
-                    width: 1912
-                last_showed_frame: !!python/object:vspreview.core.types.units.Frame
-                    value: 51247
-                play_fps: !!python/object/apply:fractions.Fraction
-                - 24000
-                - 1001
-                title: Video Node 2
             '3': !!python/object:vspreview.core.types.video.VideoOutput
                 crop_values: !!python/object:vspreview.core.types.misc.CroppingInfo
                     active: false
-                    height: 1036
+                    height: 1080
                     is_absolute: false
                     left: 0
                     top: 0
-                    width: 1912
+                    width: 1920
                 last_showed_frame: !!python/object:vspreview.core.types.units.Frame
-                    value: 51247
+                    value: 24658
                 play_fps: !!python/object/apply:fractions.Fraction
                 - 24000
                 - 1001
                 title: Video Node 3
-            '4': !!python/object:vspreview.core.types.video.VideoOutput
-                crop_values: !!python/object:vspreview.core.types.misc.CroppingInfo
-                    active: false
-                    height: 1036
-                    is_absolute: false
-                    left: 0
-                    top: 0
-                    width: 1912
-                last_showed_frame: !!python/object:vspreview.core.types.units.Frame
-                    value: 51247
-                play_fps: !!python/object/apply:fractions.Fraction
-                - 24000
-                - 1001
-                title: Video Node 4
-            '5': !!python/object:vspreview.core.types.video.VideoOutput
-                crop_values: !!python/object:vspreview.core.types.misc.CroppingInfo
-                    active: false
-                    height: 1036
-                    is_absolute: false
-                    left: 0
-                    top: 0
-                    width: 1912
-                last_showed_frame: !!python/object:vspreview.core.types.units.Frame
-                    value: 51247
-                play_fps: !!python/object/apply:fractions.Fraction
-                - 24000
-                - 1001
-                title: Video Node 5
-            '6': !!python/object:vspreview.core.types.video.VideoOutput
-                crop_values: !!python/object:vspreview.core.types.misc.CroppingInfo
-                    active: false
-                    height: 1036
-                    is_absolute: false
-                    left: 0
-                    top: 0
-                    width: 1912
-                last_showed_frame: !!python/object:vspreview.core.types.units.Frame
-                    value: 51247
-                play_fps: !!python/object/apply:fractions.Fraction
-                - 24000
-                - 1001
-                title: Video Node 6
-            '7': !!python/object:vspreview.core.types.video.VideoOutput
-                crop_values: !!python/object:vspreview.core.types.misc.CroppingInfo
-                    active: false
-                    height: 1036
-                    is_absolute: false
-                    left: 0
-                    top: 0
-                    width: 1912
-                last_showed_frame: !!python/object:vspreview.core.types.units.Frame
-                    value: 51247
-                play_fps: !!python/object/apply:fractions.Fraction
-                - 24000
-                - 1001
-                title: Video Node 7
-            '8': !!python/object:vspreview.core.types.video.VideoOutput
-                crop_values: !!python/object:vspreview.core.types.misc.CroppingInfo
-                    active: false
-                    height: 1036
-                    is_absolute: false
-                    left: 0
-                    top: 0
-                    width: 1912
-                last_showed_frame: !!python/object:vspreview.core.types.units.Frame
-                    value: 51247
-                play_fps: !!python/object/apply:fractions.Fraction
-                - 24000
-                - 1001
-                title: Video Node 8
             type: VideoOutput
         settings: *id001
         sync_outputs: true
