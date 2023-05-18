@@ -25,7 +25,7 @@ denoise_final = core.std.MaskedMerge(denoise2, src, den_mask)
 
 
 ### AA ###
-aa = vsaa.based_aa(denoise_final, 2, 30)
+aa = vsaa.based_aa(denoise_final, rfactor=2, mask_thr=30)
 
 
 ### Dehalo ###
