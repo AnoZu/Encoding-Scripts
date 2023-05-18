@@ -1,0 +1,84 @@
+# Version@3.0
+# VSPreview script storage for: C:\Users\Hammad Ansari\Desktop\Encoding-Scripts\The Angel Next Door Spoils Me Rotten\tenshi01.vpy
+# Global setting saved at path: C:\Users\Hammad Ansari\AppData\Roaming\.vspreview\.global.yml
+_toolbars_settings:
+- *id001
+- *id002
+- *id003
+- *id004
+- *id005
+- *id006
+- *id007
+- *id008
+- *id009
+settings: *id001
+toolbars: !!python/object:vspreview.toolbars.Toolbars
+    benchmark:
+        settings: *id005
+        visibility: false
+    comp:
+        settings: *id007
+        visibility: true
+    debug:
+        settings: *id008
+    main:
+        current_output_index: 1
+        current_zoom_index: 5
+        outputs: !!python/object:vspreview.models.outputs.VideoOutputs
+            '1': !!python/object:vspreview.core.types.video.VideoOutput
+                crop_values: !!python/object:vspreview.core.types.dataclasses.CroppingInfo
+                    active: false
+                    height: 1080
+                    is_absolute: false
+                    left: 0
+                    top: 0
+                    width: 1920
+                last_showed_frame: !!python/object:vspreview.core.types.units.Frame
+                    value: 12294
+                play_fps: 23.976023976023978
+                title: Video Node 1
+            '2': !!python/object:vspreview.core.types.video.VideoOutput
+                crop_values: !!python/object:vspreview.core.types.dataclasses.CroppingInfo
+                    active: false
+                    height: 1080
+                    is_absolute: false
+                    left: 0
+                    top: 0
+                    width: 1920
+                last_showed_frame: !!python/object:vspreview.core.types.units.Frame
+                    value: 12294
+                play_fps: 23.976023976023978
+                title: Video Node 2
+            type: VideoOutput
+        settings: *id001
+        sync_outputs: true
+    misc:
+        save_file_name_template: '{script_name}_{frame}'
+        settings: *id006
+        show_debug: false
+        visibility: false
+    pipette:
+        settings: *id004
+        visibility: false
+    playback:
+        audio_muted: false
+        audio_outputs: !!python/object:vspreview.models.outputs.AudioOutputs
+            type: AudioOutput
+        current_audio_output_index: -1
+        seek_interval_frame: !!python/object:vspreview.core.types.units.Frame
+            value: 1
+        settings: *id002
+        visibility: false
+        volume: 50
+    scening:
+        always_show_scene_marks: false
+        current_list_index: -1
+        first_frame: null
+        label: ''
+        lists: !!python/object:vspreview.models.scening.SceningLists
+            items: []
+        scening_export_template: ({start},{end}),
+        second_frame: null
+        settings: *id003
+        visibility: false
+window_settings: *id009

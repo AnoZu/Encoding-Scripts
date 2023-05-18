@@ -1,8 +1,10 @@
 from vstools import vs, core, depth, replace_ranges, get_y
 from jvsfunc import retinex_edgemask, ccdmod
-from vsdeband import f3kdb
+from vsdeband import F3kdb
 from vsdehalo import edge_cleaner, smooth_dering
-from vsaa import antialiasers, transpose_aa
+from vsaa import Nnedi3, fine_aa
+from vsdeband import pfdeband
+import vsmasktools as vsm
 
 core = vs.core
 
@@ -15,21 +17,21 @@ src_luma = get_y(src)
 
 
 #### Denoise ####
-linemask = retinex_edgemask(src_luma, 1)
 denoise32 = depth(src_luma, 32)
-denoise_bm3d = core.bm3dcuda_rtc.BM3D(denoise32)
+denoise_bm3d = core.bm3dcuda_rtc.BM3D(denoise32, sigma = 0.72)
 src_chroma = ccdmod(src, 4)
-shuffle = core.std.ShufflePlanes([depth(denoise_bm3d, 16), src_chroma], [0, 1, 2], vs.YUV)
-denoise_final = core.std.MaskedMerge(shuffle, src, linemask)
+denoise_final = core.std.ShufflePlanes([depth(denoise_bm3d, 16), src_chroma], [0, 1, 2], vs.YUV)
 
 
 #### AA ####
-aa_nnedi3 = antialiasers.Nnedi3()
-aa = transpose_aa(denoise_final, aa_nnedi3)
+nnedi3 = Nnedi3()
+aa = fine_aa(denoise_final, False, nnedi3)
 
 
 #### Deband ####
-deband = f3kdb.F3kdb.deband(aa, radius = 16)
+dbmask = vsm.detail_mask_neo(src_luma, 0.8)
+deband = pfdeband(aa, radius = 16, thr = 15, debander = F3kdb)
+deband_final = core.std.MaskedMerge(deband, aa, dbmask)
 
 
 #### Dehalo ####
@@ -45,10 +47,11 @@ grain = core.grain.Add(dehalo_final, var = 0.2, seed = 1, constant = True)
 out = depth(replace_ranges(src, grain, fl_ranges), 10)
 
 
-out.set_output()
-#src.set_output(1)
+out.set_output(2)
+src.set_output(1)
 #denoise_final.set_output(2)
 #aa.set_output(3)
-#deband.set_output(4)
+#deband_final.set_output(4)
 #dehalo_final.set_output(5)
 #grain.set_output(6)
+#dbmask.set_output(7)
