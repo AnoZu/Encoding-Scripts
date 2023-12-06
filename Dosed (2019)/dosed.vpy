@@ -1,6 +1,5 @@
 from vstools import core, set_output, finalize_clip
 from vsmuxtools import src_file, Setup, x265, settings_builder_x265, do_audio, mux
-from vsdenoise import nlm, MVTools, Prefilter, MotionMode, SADMode, SearchMode, DeviceType, PelType, BM3DCudaRTC
 import vsaa
 
 core
@@ -19,7 +18,7 @@ final = finalize_clip(aa, 10)
 
 if __name__ == "__main__":
     settings = settings_builder_x265(
-        crf=18, 
+        crf=21, 
         aq_strength=0.82, psy_rd=2, psy_rdoq=2,
         qcomp=0.73, rd=4, 
         preset="veryslow",
