@@ -1,8 +1,7 @@
 from vstools import core, finalize_clip
-from vsdenoise import nlm, MVTools, BM3DCudaRTC, Profile, Prefilter, MotionMode, SADMode, SearchMode, DeviceType, PelType
+from vsdenoise import nlm, MVTools, Prefilter, MotionMode, SADMode, SearchMode, DeviceType, PelType
 from vsmuxtools import src_file, Setup, x265, settings_builder_x265, do_audio, Opus, TmdbConfig, mux
 from vspreview import set_output
-from vsaa import fine_aa, Eedi3
 
 setup = Setup("00")
 
