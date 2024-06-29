@@ -9,10 +9,7 @@ setup = Setup("00")
 
 ## Source ##
 WEBDL_4K = src_file(r"D:\data\torrents\Dune.Part.Two.2024.2160p.MA.WEB-DL.TrueHD.Atmos.7.1.H.265-FLUX.mkv", force_bs=True)
-#bluray = src_file(r"D:\data\torrents\Dune.Part.Two.2024.BluRay.1080p.TrueHD.Atmos.7.1.AVC.REMUX-FraMeSToR\Dune.Part.Two.2024.BluRay.1080p.TrueHD.Atmos.7.1.AVC.REMUX-FraMeSToR.mkv")
 webdl_4k = WEBDL_4K.init()
-#bd = bluray.init()
-#sync = webdl_4k[24:]
 ds4k_webdl = Hermite.descale(webdl_4k, width=1920, height=1080, linear=False)
 
 crop = core.std.Crop(ds4k_webdl, top=140, bottom=140)
@@ -36,7 +33,3 @@ if __name__ == "__main__":
     )
 else:
     set_output(final, "DS4K MA WEB-DL")
-
-#set_output(webdl_4k)
-#set_output(ds4k_webdl)
-#set_output(final)
