@@ -22,11 +22,9 @@ for i in range(1, 9):
 
     yuv444p16 = core.resize.Lanczos(webdl_4k, format=vs.YUV444P16)
     tnmp = core.placebo.Tonemap(yuv444p16, src_csp=3, dst_csp=0, dst_prim=3, src_max=10000, src_min=0.005, dst_max=100, dst_min=0.1, dynamic_peak_detection=True, gamut_mapping=0, tone_mapping_function=4, metadata=0, use_dovi=True, contrast_recovery=0.0)
-
     yuv420p16 = core.resize.Bicubic(tnmp, format=vs.YUV420P16, range=0)
-
     frameprops = core.std.SetFrameProps(yuv420p16, _Matrix=vs.MATRIX_BT709, _Transfer=vs.TRANSFER_BT709, _Primaries=vs.PRIMARIES_BT709)
-
+    
     ds4k = Hermite.scale(frameprops, width=1920, height=960, linear=True)
 
     final = finalize_clip(ds4k, 10)
