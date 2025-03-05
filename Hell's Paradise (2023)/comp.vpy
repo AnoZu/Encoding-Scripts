@@ -10,7 +10,7 @@ from vsmuxtools import src_file, GlobSearch, Setup, SourceFilter, x265, settings
 from vspreview import set_output
 
 
-setup = Setup("01")
+setup = Setup("02")
 
 op_ed_range = [(1942, 4088), (32100, 34238)]
 
@@ -27,7 +27,7 @@ vodes = src_file(GlobSearch(f"*Jigokuraku - S01E{setup.episode} v2*.mkv"), previ
 vodes_init = vodes.init(bits=10)
 vodes = vodes_init[360:]
 
-anozu = src_file(R"C:\Users\AnoZu\Desktop\Encoding-Scripts\Hell's Paradise (2023)\premux\Hell's Paradise (2023) S01E01 (1080p BluRay Dual-Audio Opus 2.0 x265) [AnoZu].mkv")
+anozu = src_file(R"D:\media\Hell's Paradise (2023) S01 (1080p BluRay Dual-Audio Opus 2.0 x265) [AnoZu]\Hell's Paradise (2023) S01E02 Screening and Choosing (1080p BluRay Dual-Audio Opus 2.0 x265) [AnoZu].mkv")
 anozu_init = anozu.init(bits=10)
 
 set_output(usbd_init, "USBD")
