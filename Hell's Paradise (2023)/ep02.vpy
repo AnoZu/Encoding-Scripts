@@ -19,13 +19,6 @@ debd = src_file(GlobSearch(f"*Jigokuraku - {setup.episode}*.mkv"), preview_sourc
 debd_init = debd.init()[360:]
 bd = debd_init
 
-#usbd = src_file(GlobSearch(f"*Paradise.S01E{setup.episode}*.mkv"), preview_sourcefilter=SourceFilter.FFMS2, sourcefilter=SourceFilter.BESTSOURCE)
-#usbd_init = usbd.init()
-
-#vodes = src_file(GlobSearch(f"*Jigokuraku - S01E{setup.episode} v2*.mkv"), preview_sourcefilter=SourceFilter.FFMS2, sourcefilter=SourceFilter.BESTSOURCE)
-#vodes_init = vodes.init(bits=10)
-#vodes = vodes_init[360:]
-
 # Denoise
 mvref = MVTools.denoise(bd, thSAD=100, tr=2, prefilter=Prefilter.BM3D, block_size=32, overlap=16, motion=MotionMode.HIGH_SAD, sad_mode=SADMode.SPATIAL.same_recalc, search=SearchMode.DIAMOND.defaults)
 den_y = BM3DCudaRTC.denoise(bd, sigma=1, tr=2, profile=Profile.FAST, ref=mvref, planes=0)
@@ -55,8 +48,6 @@ grain = adaptive_grain(debf, strength=[1.8, 0], size=3.4, type=2, scale=0.7, sca
 # Final
 final = finalize_clip(grain, 10)
 
-chapters = Chapters(R".\Jigokuraku - S01E02.xml").shift(-360)
-
 if __name__ == "__main__":
     settings = settings_builder_x265(
         crf=16,
@@ -73,29 +64,6 @@ if __name__ == "__main__":
     mux(
         enc.to_track(name="Encoded by AnoZu", lang="ja", default=True),
         audio.to_track(name="Japanese 2.0", lang="ja", default=True),
-        chapters,
     )
 else:
     set_output(final)
-
-#set_output(bd, "DEBD")
-#set_output(vodes, "Vodes")
-#set_output(anozu, "AnoZu")
-#set_output(den)
-#set_output(rescf)
-#set_output(deb_mask)
-#set_output(deb)
-#set_output(debf)
-#set_output(grain)
-#set_output(final)
-#set_output(den_y)
-#set_output(den_uv)
-#set_output(desc)
-#set_output(double)
-#set_output(resc)
-#set_output(usbd_init, "USBD")
-#set_output(denf)
-#set_output(aa)
-#set_output(dhfin)
-#set_output(deb)
-#set_output(grain)

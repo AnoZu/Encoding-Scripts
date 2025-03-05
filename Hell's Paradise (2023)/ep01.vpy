@@ -48,8 +48,6 @@ grain = adaptive_grain(debf, strength=[1.8, 0], size=3.4, type=2, scale=0.7, sca
 # Final
 final = finalize_clip(grain, 10)
 
-chapters = Chapters(R".\Jigokuraku - S01E01.xml").shift(-361)
-
 if __name__ == "__main__":
     settings = settings_builder_x265(
         crf=16,
@@ -66,7 +64,6 @@ if __name__ == "__main__":
     mux(
         enc.to_track(name="Encoded by AnoZu", lang="ja", default=True),
         audio.to_track(name="Japanese 2.0", lang="ja", default=True),
-        chapters,
     )
 else:
     set_output(final)

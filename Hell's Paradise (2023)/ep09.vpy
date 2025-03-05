@@ -4,7 +4,6 @@ import vsdeband as vsdb
 import vsscale
 import vsmlrt
 import vskernels as vsk
-import vsmasktools
 from vodesfunc import adaptive_grain
 from vsmuxtools import src_file, GlobSearch, Setup, SourceFilter, x265, settings_builder_x265, do_audio, Opus, mux
 from vspreview import set_output
@@ -19,13 +18,6 @@ op_ed_range = [(1750, 3895), (32628, 34765)]
 debd = src_file(GlobSearch(f"*Jigokuraku - {setup.episode}*.mkv"), preview_sourcefilter=SourceFilter.FFMS2, sourcefilter=SourceFilter.BESTSOURCE)
 debd_init = debd.init()
 bd = debd_init[360:]
-
-#usbd = src_file(GlobSearch(f"*Paradise.S01E{setup.episode}*.mkv"), preview_sourcefilter=SourceFilter.FFMS2, sourcefilter=SourceFilter.BESTSOURCE)
-#usbd_init = usbd.init()
-
-#vodes = src_file(GlobSearch(f"*Jigokuraku - S01E{setup.episode} v2*.mkv"), preview_sourcefilter=SourceFilter.FFMS2, sourcefilter=SourceFilter.BESTSOURCE)
-#vodes_init = vodes.init(bits=10)
-#vodes = vodes_init[360:]
 
 # Denoise
 mvref = MVTools.denoise(bd, thSAD=100, tr=2, prefilter=Prefilter.BM3D, block_size=32, overlap=16, motion=MotionMode.HIGH_SAD, sad_mode=SADMode.SPATIAL.same_recalc, search=SearchMode.DIAMOND.defaults)
@@ -75,26 +67,3 @@ if __name__ == "__main__":
     )
 else:
     set_output(final)
-
-#set_output(bd, "DEBD")
-#set_output(vodes, "Vodes")
-#set_output(usbd_init, "USBD")
-#set_output(anozu, "AnoZu")
-#set_output(den)
-#set_output(resc)
-#set_output(rescf)
-#set_output(deb_mask)
-#set_output(deb)
-#set_output(debf)
-#set_output(grain)
-#set_output(final)
-#set_output(den_y)
-#set_output(den_uv)
-#set_output(desc)
-#set_output(double)
-#set_output(resc)
-#set_output(denf)
-#set_output(aa)
-#set_output(dhfin)
-#set_output(deb)
-#set_output(grain)
