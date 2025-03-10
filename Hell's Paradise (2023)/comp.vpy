@@ -1,18 +1,8 @@
-from vstools import core, depth, get_y, split, join, replace_ranges, finalize_clip
-from vsdenoise import BM3DCudaRTC, nlm, MVTools, Prefilter, MotionMode, SADMode, SearchMode, DeviceType, Profile
-import vsdeband as vsdb
-import vsscale
-import vsmlrt
-import vskernels as vsk
-import vsmasktools
-from vodesfunc import adaptive_grain
-from vsmuxtools import src_file, GlobSearch, Setup, SourceFilter, x265, settings_builder_x265, do_audio, Opus, mux
+from vsmuxtools import src_file, GlobSearch, Setup, SourceFilter
 from vspreview import set_output
 
 
 setup = Setup("02")
-
-op_ed_range = [(1942, 4088), (32100, 34238)]
 
 
 # Clip
