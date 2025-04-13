@@ -8,9 +8,6 @@ setup = Setup("movie")
 src = src_file(R".\Barfi.2012.BluRay.1080p.DTS-HD.MA.5.1.AVC.REMUX-FraMeSToR.mkv", preview_sourcefilter=SourceFilter.BESTSOURCE, sourcefilter=SourceFilter.BESTSOURCE)
 clip = src.init()
 
-src2 = src_file(R"D:\media\Barfi! (2012) (1080p BluRay DDP 5.1 Hindi x265) [AnoZu].mkv", preview_sourcefilter=SourceFilter.BESTSOURCE, sourcefilter=SourceFilter.BESTSOURCE)
-clip2 = src2.init()
-
 # Crop black bars
 crop = core.std.Crop(clip, top=132, bottom=132)
 
@@ -32,8 +29,5 @@ if __name__ == "__main__":
         enc.to_track(name="Encoded by AnoZu", lang="hi-IN", default=True),
         tmdb=TmdbConfig(127501, movie=True, language="en-US", write_ids=True, write_title=False, write_cover=True),
     )
-#else:
-    #set_output(final)
-
-set_output(final, "BD")
-set_output(clip2, "AnoZu")
+else:
+    set_output(final)
