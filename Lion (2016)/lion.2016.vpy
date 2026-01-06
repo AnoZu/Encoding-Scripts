@@ -1,5 +1,5 @@
 from vstools import core, finalize_clip
-from vsmuxtools import src_file, SourceFilter, Setup, x265, settings_builder_x265, do_audio, Opus, TmdbConfig, mux
+from vsmuxtools import src_file, SourceFilter, Setup, x265, settings_builder_x265, do_audio, Opus, mux
 from vspreview import set_output
 
 setup = Setup("movie")
@@ -31,10 +31,6 @@ if __name__ == "__main__":
         enc.to_track(name="Encoded by AnoZu", lang="en", default=True),
         comm1.to_track(name="Commentary by director Garth Davis", lang="en", default=False),
         comm2.to_track(name="Commentary by Sargoo Brierley and Sue Brierley", lang="en", default=False),
-        #tmdb=TmdbConfig(334543, movie=True, language="en-US", write_ids=True, write_title=False, write_cover=True),
     )
 else:
    set_output(final)
-
-#set_output(clip)
-#set_output(crop)
