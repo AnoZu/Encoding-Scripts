@@ -17,6 +17,7 @@ clip = src.init()
 # Crop black bars
 crop = core.std.Crop(clip, top=138, bottom=138)
 
+# Clean dirty borders
 cleaned = core.bore.SinglePlane(depth(crop, 32), left=0, right=0, top=2, bottom=2, weight_mask=None, plane=0)
 
 # Final
