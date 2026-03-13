@@ -1,9 +1,8 @@
-from vstools import core, vs, depth, finalize_clip, replace_ranges
-import vsdehalo as vsdh
+from vstools import core, finalize_clip, replace_ranges
 from vsdenoise import MVToolsPreset, Prefilter, mc_degrain, bm3d, nl_means
 import vskernels as vsk
 from vodesfunc import adaptive_grain
-from vsmuxtools import src_file, GlobSearch, SourceFilter, Setup, x265, sb265, TmdbConfig, mux
+from vsmuxtools import src_file, SourceFilter, Setup, x265, sb265, TmdbConfig, mux
 from vspreview import is_preview, set_output
 
 

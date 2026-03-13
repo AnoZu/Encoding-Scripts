@@ -2,7 +2,7 @@ from vstools import core, set_output
 from vsmuxtools import Setup
 from vspreview import set_output
 
-### https://slow.pics/c/0UHZGnfu
+## https://slow.pics/c/0UHZGnfu
 
 setup = Setup(
     "movie",
